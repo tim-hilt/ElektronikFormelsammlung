@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (TeX Live 2018/Arch Linux)  (format=lualatex 2018.12.3)  28 DEC 2018 16:22
+This is LuaTeX, Version 1.07.0 (TeX Live 2018/Arch Linux)  (format=lualatex 2018.12.3)  28 DEC 2018 17:05
  system commands enabled.
  file:line:error style messages enabled.
 **\input ElektronikFormelsammlung.tex
@@ -32,7 +32,7 @@ Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
 Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'.
-luaotfload | main : initialization completed in 0.109 seconds
+luaotfload | main : initialization completed in 0.110 seconds
 
 (./ElektronikFormelsammlung.tex
 (/usr/share/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -1926,12 +1926,24 @@ File: ESBTransistor.png Graphic file (type png)
 <use ESBTransistor.png>
 Package luatex.def Info: ESBTransistor.png  used on input line 97.
 (luatex.def)             Requested size: 324.36473pt x 132.91385pt.
+<OPV1.png, id=44, 359.744pt x 556.479pt>
+File: OPV1.png Graphic file (type png)
+<use OPV1.png>
+Package luatex.def Info: OPV1.png  used on input line 103.
+(luatex.def)             Requested size: 486.53883pt x 752.65775pt.
  [2<./ESBTransistor.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 101.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
- (./ElektronikFormelsammlung.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 101.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 101.
+<OPV2.png, id=54, 370.45067pt x 561.56467pt>
+File: OPV2.png Graphic file (type png)
+<use OPV2.png>
+Package luatex.def Info: OPV2.png  used on input line 107.
+(luatex.def)             Requested size: 486.53883pt x 737.56595pt.
+ [3<./OPV1.png>] [4<./OPV2.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 110.
+
+(./ElektronikFormelsammlung.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 110.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 110.
 Package rerunfilecheck Info: File `ElektronikFormelsammlung.out' has not changed
 .
 (rerunfilecheck)             Checksum: 3BD01FD59DEB326F714DE8E3789AC4A8;213.
@@ -1941,14 +1953,14 @@ Package logreq Info: Writing requests to 'ElektronikFormelsammlung.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 53358 strings out of 494407
+ 53380 strings out of 494407
  100000,2373549 words of node,token memory allocated
  641 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 12 attribute, 73 glue_spec
 , 12 attribute_list, 1 write nodes
    avail lists: 1:5,2:670,3:110,4:30,5:519,6:42,7:2242,8:72,9:365,10:11,11:197,1
 2:1
- 55983 multiletter control sequences out of 65536+600000
+ 55991 multiletter control sequences out of 65536+600000
  107 fonts using 17629863 bytes
  73i,20n,89p,9109b,2189s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf-dist/fonts/opentype/adobe/sourceserifpro/SourceSerifPro-Regula
@@ -1965,10 +1977,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts
 lic/amsfonts/cmextra/cmmib8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on ElektronikFormelsammlung.pdf (2 pages, 178555 bytes).
+Output written on ElektronikFormelsammlung.pdf (4 pages, 6008021 bytes).
 
-PDF statistics: 115 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 131072)
+PDF statistics: 127 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 131072)
  48 words of extra memory for PDF output out of 10000 (max. 100000000)
 
