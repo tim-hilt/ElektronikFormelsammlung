@@ -11,9 +11,10 @@
     "latex2e"
     "scrartcl"
     "scrartcl12"
-    "mystyle"
     "circuitikz"
     "siunitx"
+    "lipsum"
+    "mystyle"
     "scrlayer-scrpage"))
  :latex)
 

@@ -1,8 +1,8 @@
 \documentclass[a5paper, 12pt]{scrartcl}
 
-\usepackage{mystyle}
 \usepackage[europeanresistors]{circuitikz}
 \usepackage{siunitx}
+\usepackage{lipsum, mystyle}
 
 \usepackage{scrlayer-scrpage}
 
@@ -15,31 +15,31 @@
 \ihead{Emil Slomka, Tim Hilt}
 
 \KOMAoptions{
-  % chapterprefix=true,
   headsepline=true,
 }
 
-\title{Formelsammlung Elektronik}
-\author{Emil Slomka, Tim Hilt}
-
 \begin{document}
-\newgeometry{left=1cm, right=1cm, top=2cm}
-\maketitle
+
+\newgeometry{left=1cm, right=1cm, top=2cm, bottom=1cm}
+\begin{center}
+  \usekomafont{disposition}\huge Elektronik Formelsammlung
+\end{center}
 
 \section{Grundlagen und Wiederholung}
 
-\subsection{Übertragungsfunktion}
-\begin{align*}
-  F = \frac{U_a}{U_e} = \frac{\text{Widerstände parallel zum Ausgang}}{\text{Widerstände parallel zum Eingang}}
-\end{align*}
+\begin{minipage}{.45\textwidth}
+\textbf{Übertragungsfunktion:} \[F = \frac{U_a}{U_e} = \frac{\text{Widerstände parallel zum Ausgang}}{\text{Widerstände parallel zum Eingang}}\]
 
-\mybfcol{Bei Berechnung zweier, paralleler Widerstände \(R_1\) und \(R_2\):}
+\textbf{Berechnung zweier, paralleler Widerstände \(R_1\) und \(R_2\):} \[R_1 || R_2 = \frac{R_1 \cdot R_2}{R_1 + R_2}\]
 
-\begin{align*}
-  R_1 || R_2 = \frac{R_1 \cdot R_2}{R_1 + R_2}
-\end{align*}
+\textbf{Leistung:} \[P = \frac{U^2}{R} = U \cdot \frac{U}{R} = U \cdot I\]
+\end{minipage}\hfill\vline\hfill%
+\begin{minipage}{.45\textwidth}
+  \lipsum[4]
+\end{minipage}
 
-Leistung: \dotfill \(P = \quad \frac{U^2}{R} \quad = \quad U \cdot \frac{U}{R} \quad = \quad U \cdot I\)\\
+\section{Kondensator und Zeitkonstanten}
+
 Zeitkonstante \(\tau\) beim \mybfcol{Kondensator}: \dotfill \(\tau = R \cdot C\)\\
 Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\\
 
@@ -49,23 +49,20 @@ Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\
   \caption{Ladekurven Kondensator \mybfcol{Achtung: \(t = \Delta t = t_1 - t_0\)}}
 \end{figure}
 
+\textbf{Zum Zeichnen im Zeitbereich:} Arbeitsgerade von Anfangsspannung zur Endspannung zeichnen, mit \(t = \tau\)
+
 \mybfcol{Achtung: Immer alle Widerstände parallel und in Reihe zum Kondensator berücksichtigen und Übertragungsfunktion für Ladeziel verwenden!}
 
-\begin{center}
-  \begin{tabular}{c|c|c|c}
+\begin{table}
+  \centering
+  \begin{tabular}{cc}
     \toprule
-    \(t=\tau\) & \(\approx 63\%\) von\ \(|A-E|\) & \(\rightarrow |A-E| \cdot 0.63\) beim Aufladen & \(\rightarrow |A-E| \cdot 0.37\) beim Entladen\\
-    \(t=2\tau\) & \(\approx 86\%\) von\ \(|A-E|\) & \(\rightarrow |A-E| \cdot 0.86\) beim Aufladen & \(\rightarrow |A-E| \cdot 0.14\) beim Entladen\\
-    \(t=5\tau\) & \(\approx 99\%\) von\ \(|A-E|\) & \(\rightarrow \approx E\) beim Aufladen & \(\rightarrow \approx A\) beim Entladen\\
+    \(t=\tau\) & \(\approx 63\%\) von\ \(|A-E|\)\\
+    \(t=2\tau\) & \(\approx 86\%\) von\ \(|A-E|\)\\
+    \(t=5\tau\) & \(\approx 99\%\) von\ \(|A-E|\)\\
     \bottomrule
   \end{tabular}
-\end{center}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.6\textwidth]{ESBTransistor}
-  \caption{Gleichstromersatzschaltbild eines Bipolartransistors}
-\end{figure}
+\end{table}
 
 \section{Filter}
 
@@ -74,15 +71,17 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \begin{table}[H]
   \centering
   \begin{tabular}{cllll}
+    \toprule
     & \textbf{RC-Tiefpass} & \textbf{RC-Hochpass} & \textbf{RL-Tiefpass} & \textbf{RL-Hochpass}\\
     \midrule
     \textbf{Übertragungsfunktion \(\frac{U_a}{U_e} = H(j\omega)\)} & \(\frac{1}{1 + j\omega R C}\) & \(\frac{j\omega RC}{1 + j\omega RC}\) & \(\frac{R}{R + j \omega L}\)& \(\frac{j\omega L}{R + j \omega L}\) \\[1em]
-    \textbf{Grenzfrequenz \(f_G / \omega_G\)} & \(\frac{1}{2 \pi R C}; \frac{1}{RC}\) & \(\frac{1}{2 \pi R C}; \frac{1}{RC}\) & \(\frac{R}{2 \pi L}; \frac{R}{L}\) & \(\frac{R}{2 \pi L}; \frac{R}{L}\)
+    \textbf{Grenzfrequenz \(f_G / \omega_G\)} & \(\frac{1}{2 \pi R C}; \frac{1}{RC}\) & \(\frac{1}{2 \pi R C}; \frac{1}{RC}\) & \(\frac{R}{2 \pi L}; \frac{R}{L}\) & \(\frac{R}{2 \pi L}; \frac{R}{L}\)\\
+    \bottomrule
   \end{tabular}
   \caption{Grenzfrequenz und Übertragungsfunktionen}
 \end{table}
 
-Dämpfung bei passiven Filtern erster Ordnung:
+\textbf{Dämpfung bei passiven Filtern erster Ordnung:}
 
 \begin{itemize}
 \item \SI{0}{\decibel} im Durchlassbereich
@@ -90,6 +89,14 @@ Dämpfung bei passiven Filtern erster Ordnung:
 \item \SI{6}{\decibel} pro Oktave (doppelte Frequenz) im Sperrbereich
 \item \SI{20}{\decibel} pro Dekade (zehnfache Frequenz) im Sperrbereich
 \end{itemize}
+
+\section{Transistor}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.6\textwidth]{ESBTransistor}
+  \caption{Gleichstromersatzschaltbild eines Bipolartransistors}
+\end{figure}
 
 \end{document}
 
