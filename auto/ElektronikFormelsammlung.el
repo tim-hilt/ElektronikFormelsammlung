@@ -4,13 +4,13 @@
    (setq TeX-command-extra-options
          "--shell-escape")
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("scrartcl" "a5paper" "11pt")))
+                     '(("scrartcl" "a5paper" "12pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("circuitikz" "europeanresistors")))
    (TeX-run-style-hooks
     "latex2e"
     "scrartcl"
-    "scrartcl11"
+    "scrartcl12"
     "mystyle"
     "circuitikz"
     "siunitx"
