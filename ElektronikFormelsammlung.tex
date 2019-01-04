@@ -49,6 +49,16 @@ Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\
   \caption{Ladekurven Kondensator \mybfcol{Achtung: \(t = \Delta t = t_1 - t_0\)}}
 \end{figure}
 
+\begin{center}
+  \begin{tabular}{ll}
+    \toprule
+    Wenn Ladung von \SI{0}{\volt} nach \(U_e\): & \(U_a = U_e \cdot (1 - e^{-\frac{t}{\tau}})\)\\
+    Wenn Entladung von \(A\) nach \SI{0}{\volt} & \(U_a = U_e \cdot e^{-\frac{t}{\tau}}\)\\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+
 \textbf{Zum Zeichnen im Zeitbereich:} Arbeitsgerade von Anfangsspannung zur Endspannung zeichnen, mit \(t = \tau\)
 
 \mybfcol{Achtung: Immer alle Widerstände parallel und in Reihe zum Kondensator berücksichtigen und Übertragungsfunktion für Ladeziel verwenden!}
@@ -84,8 +94,8 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \textbf{Dämpfung bei passiven Filtern erster Ordnung:}
 
 \begin{itemize}
-\item \SI{0}{\decibel} im Durchlassbereich
-\item \SI{3}{\decibel} an der Grenzfrequenz \(f_G\)
+\item Dämpfung um einen Anfangswert im Durchlassbereich (Muss berechnet werden, indem\\ \(20 \cdot \log(|H(0)|)\) berechnet wird)
+\item Anfangswert \(- \SI{3}{\decibel}\) an der Grenzfrequenz \(f_G\)
 \item \SI{6}{\decibel} pro Oktave (doppelte Frequenz) im Sperrbereich
 \item \SI{20}{\decibel} pro Dekade (zehnfache Frequenz) im Sperrbereich
 \end{itemize}
@@ -99,16 +109,14 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \end{figure}
 
 % --------------------- OPV ---------------------
-\clearpage
 \begin{figure}[H]
   \centering
-  \includegraphics[width=.9\textwidth]{OPV1}
+  \includegraphics[width=.93\textwidth]{OPV1}
 \end{figure}
-\clearpage
 \begin{figure}[H]
-  \centering \includegraphics[width=.9\textwidth]{OPV2}
+  \centering
+  \includegraphics[width=.95\textwidth]{OPV2}
 \end{figure}
-\clearpage
 % -----------------------------------------------
 
 \end{document}
