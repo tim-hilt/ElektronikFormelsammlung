@@ -100,14 +100,6 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \item \SI{20}{\decibel} pro Dekade (zehnfache Frequenz) im Sperrbereich
 \end{itemize}
 
-\section{Transistor}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.6\textwidth]{ESBTransistor}
-  \caption{Gleichstromersatzschaltbild eines Bipolartransistors}
-\end{figure}
-
 % --------------------- OPV ---------------------
 \begin{figure}[H]
   \centering
@@ -118,6 +110,30 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
   \includegraphics[width=.95\textwidth]{OPV2}
 \end{figure}
 % -----------------------------------------------
+
+\section{Transistor}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.6\textwidth]{Transistor}
+  \caption{Ströme im Transistor}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.6\textwidth]{ESBTransistor}
+  \caption{Ersatzschaltbild eines Bipolartransistors}
+\end{figure}
+\mybfcol{Achtung: Beim Zeichnen des Ersatzschaltbildes wird die Spannungsquelle kurzgeschlossen! Das heißt überall wo vorher die Versorgungsspannung war ist nun GND.}
+
+\textbf{Emitterstrom}
+\[I_E = I_B + I_C\]
+
+\textbf{Stromverstärkung}
+\[I_C = \beta \cdot I_B\]
+
+\textbf{Verlustleistung}
+\[P = U_{CE} \cdot I_C\]
 
 \end{document}
 
