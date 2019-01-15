@@ -25,7 +25,7 @@
   \usekomafont{disposition}\huge Elektronik Formelsammlung
 \end{center}
 
-\section{Grundlagen und Wiederholung}
+{\usekomafont{disposition}\Large 1 Grundlagen und Wiederholung}
 
 \begin{minipage}{.45\textwidth}
 \textbf{Übertragungsfunktion:} \[F = \frac{U_a}{U_e} = \frac{\text{Widerstände parallel zum Ausgang}}{\text{Widerstände parallel zum Eingang}}\]
@@ -38,7 +38,7 @@
   \lipsum[4]
 \end{minipage}
 
-\section{Kondensator und Zeitkonstanten}
+{\usekomafont{disposition}\Large 2 Kondensator und Zeitkonstanten}
 
 Zeitkonstante \(\tau\) beim \mybfcol{Kondensator}: \dotfill \(\tau = R \cdot C\)\\
 Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\\
@@ -63,7 +63,9 @@ Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\
 
 \mybfcol{Achtung: Immer alle Widerstände parallel und in Reihe zum Kondensator berücksichtigen und Übertragungsfunktion für Ladeziel verwenden!}
 
-\begin{table}
+\clearpage
+
+\begin{table}[H]
   \centering
   \begin{tabular}{cc}
     \toprule
@@ -74,12 +76,11 @@ Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\
   \end{tabular}
 \end{table}
 
-\section{Filter}
+{\usekomafont{disposition}\Large 3 Filter}\\
 
 Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 
-\begin{table}[H]
-  \centering
+\begin{center}
   \begin{tabular}{cllll}
     \toprule
     & \textbf{RC-Tiefpass} & \textbf{RC-Hochpass} & \textbf{RL-Tiefpass} & \textbf{RL-Hochpass}\\
@@ -88,8 +89,52 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
     \textbf{Grenzfrequenz \(f_G / \omega_G\)} & \(\frac{1}{2 \pi R C}; \frac{1}{RC}\) & \(\frac{1}{2 \pi R C}; \frac{1}{RC}\) & \(\frac{R}{2 \pi L}; \frac{R}{L}\) & \(\frac{R}{2 \pi L}; \frac{R}{L}\)\\
     \bottomrule
   \end{tabular}
-  \caption{Grenzfrequenz und Übertragungsfunktionen}
-\end{table}
+\end{center}
+
+\begin{minipage}{.48\linewidth}
+  \begin{figure}[H]
+    \centering
+    \begin{circuitikz}
+      \draw (0,0) to [R, l=\(R\)] (4,0) to [C, l_=\(C\)] (4,-2) node[rground]{};
+      \draw (0,0) to [european voltage source] (0,-2) node[rground]{};
+      \draw (-.5,0) to [open, v=\(U_e\)] (-.5,-2);
+      \draw (4.5,0) to [open, v^=\(U_a\)] (4.5,-2);
+    \end{circuitikz}
+    \caption{RC-Tiefpass}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \begin{circuitikz}
+      \draw (0,0) to [L, l=\(L\)] (4,0) to [R, l_=\(R\)] (4,-2) node[rground]{};
+      \draw (0,0) to [european voltage source] (0,-2) node[rground]{};
+      \draw (-.5,0) to [open, v=\(U_e\)] (-.5,-2);
+      \draw (4.5,0) to [open, v^=\(U_a\)] (4.5,-2);
+    \end{circuitikz}
+    \caption{RL-Tiefpass}
+  \end{figure}
+\end{minipage}\hfill%
+\begin{minipage}{.48\linewidth}
+  \begin{figure}[H]
+    \centering
+    \begin{circuitikz}
+      \draw (0,0) to [C, l=\(C\)] (4,0) to [R, l_=\(R\)] (4,-2) node[rground]{};
+      \draw (0,0) to [european voltage source] (0,-2) node[rground]{};
+      \draw (-.5,0) to [open, v=\(U_e\)] (-.5,-2);
+      \draw (4.5,0) to [open, v^=\(U_a\)] (4.5,-2);
+    \end{circuitikz}
+    \caption{RC-Hochpass}
+  \end{figure}
+  \begin{figure}[H]
+    \centering
+    \begin{circuitikz}
+      \draw (0,0) to [R, l=\(R\)] (4,0) to [L, l_=\(L\)] (4,-2) node[rground]{};
+      \draw (0,0) to [european voltage source] (0,-2) node[rground]{};
+      \draw (-.5,0) to [open, v=\(U_e\)] (-.5,-2);
+      \draw (4.5,0) to [open, v^=\(U_a\)] (4.5,-2);
+    \end{circuitikz}
+    \caption{RL-Hochpass}
+  \end{figure}
+\end{minipage}
 
 \textbf{Dämpfung bei passiven Filtern erster Ordnung:}
 
@@ -111,7 +156,7 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \end{figure}
 % -----------------------------------------------
 
-\section{Transistor}
+{\usekomafont{disposition}\Large 4 Transistorp}
 
 \begin{figure}[H]
   \centering
@@ -134,6 +179,9 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 
 \textbf{Verlustleistung}
 \[P = U_{CE} \cdot I_C\]
+
+\textbf{Steilheit}
+\[S = \frac{\Delta I_C}{\Delta U_{BE}} = \frac{I_C}{U_T}\]
 
 \end{document}
 
