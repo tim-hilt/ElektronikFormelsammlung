@@ -27,6 +27,8 @@
 
 {\usekomafont{disposition}\Large 1 Grundlagen und Wiederholung}
 
+\vspace{.5cm}
+
 \begin{minipage}{.45\textwidth}
 \textbf{Übertragungsfunktion:} \[F = \frac{U_a}{U_e} = \frac{\text{Widerstände parallel zum Ausgang}}{\text{Widerstände parallel zum Eingang}}\]
 
@@ -38,7 +40,9 @@
   \lipsum[4]
 \end{minipage}
 
+\vspace{.5cm}
 {\usekomafont{disposition}\Large 2 Kondensator und Zeitkonstanten}
+\vspace{.5cm}
 
 Zeitkonstante \(\tau\) beim \mybfcol{Kondensator}: \dotfill \(\tau = R \cdot C\)\\
 Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\\
@@ -75,11 +79,10 @@ Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\
     \bottomrule
   \end{tabular}
 \end{table}
-
+ 
 {\usekomafont{disposition}\Large 3 Filter}\\
 
 Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
-
 \begin{center}
   \begin{tabular}{cllll}
     \toprule
@@ -182,6 +185,16 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 
 \textbf{Steilheit}
 \[S = \frac{\Delta I_C}{\Delta U_{BE}} = \frac{I_C}{U_T}\]
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.6\textwidth]{TransistorVerstärkerschaltung}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{TransistorVerstärkerschaltung_Spannungen}
+\end{figure}
 
 \end{document}
 
