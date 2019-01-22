@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (TeX Live 2018/Arch Linux)  (format=lualatex 2019.1.14)  15 JAN 2019 10:09
+This is LuaTeX, Version 1.07.0 (TeX Live 2018/Arch Linux)  (format=lualatex 2019.1.14)  16 JAN 2019 18:41
  system commands enabled.
  file:line:error style messages enabled.
 **\input ElektronikFormelsammlung.tex
@@ -32,7 +32,7 @@ Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
 Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'.
-luaotfload | main : initialization completed in 0.108 seconds
+luaotfload | main : initialization completed in 0.105 seconds
 
 (./ElektronikFormelsammlung.tex
 (/usr/share/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -106,8 +106,8 @@ Package typearea Info: These are the values describing the layout:
 (typearea)             \paperwidth      = 421.10083pt
 (typearea)              \textwidth      = 323.92374pt
 (typearea)              DIV departure   = 16%
-(typearea)              \evensidemargin = -23.68144pt
-(typearea)              \oddsidemargin  = -23.68144pt
+(typearea)              \evensidemargin = -7.48526pt
+(typearea)              \oddsidemargin  = -39.87762pt
 (typearea)             \paperheight     = 597.50793pt
 (typearea)              \textheight     = 461.5pt
 (typearea)              \topmargin      = -66.18285pt
@@ -1708,7 +1708,7 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
+* modes: twoside 
 * h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
 * v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
@@ -1722,7 +1722,7 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 * \headsep=21.75pt
 * \topskip=12.0pt
 * \footskip=50.75pt
-* \marginparwidth=32.39236pt
+* \marginparwidth=48.58855pt
 * \marginparsep=12.8401pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
@@ -1730,8 +1730,8 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
+* \@twosidetrue
+* \@mparswitchtrue
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
@@ -1853,7 +1853,7 @@ LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
+* modes: twoside 
 * h-part:(L,W,R)=(28.45274pt, 540.60239pt, 28.45274pt)
 * v-part:(T,H,B)=(56.9055pt, 759.6886pt, 28.45274pt)
 * \paperwidth=597.50787pt
@@ -1867,7 +1867,7 @@ LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 * \headsep=21.75pt
 * \topskip=12.0pt
 * \footskip=50.75pt
-* \marginparwidth=32.39236pt
+* \marginparwidth=48.58855pt
 * \marginparsep=12.8401pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
@@ -1875,44 +1875,34 @@ LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
+* \@twosidetrue
+* \@mparswitchtrue
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Overfull \hbox (1.3984pt too wide) detected at line 33
-\OML/cmm/m/it/12 F \OT1/cmr/m/n/12 = [] = []
+Underfull \hbox (badness 10000) in paragraph at lines 41--45
+[][]
  []
 
 
-Underfull \hbox (badness 2932) in paragraph at lines 41--41
-[]\TU/SourceSerifPro(0)/m/n/12 Quis-que ull-am-cor-per pla-ce-rat ip-sum. Cras
- []
-
-
-Underfull \hbox (badness 1708) in paragraph at lines 41--41
-\TU/SourceSerifPro(0)/m/n/12 nibh. Mor-bi vel jus-to vi-tae la-cus tin-cid-unt
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 47--49
+Underfull \hbox (badness 10000) in paragraph at lines 54--56
 
  []
 
 <LadekurveKondensator.png, id=7, 701.62125pt x 251.43938pt>
 File: LadekurveKondensator.png Graphic file (type png)
 <use LadekurveKondensator.png>
-Package luatex.def Info: LadekurveKondensator.png  used on input line 52.
+Package luatex.def Info: LadekurveKondensator.png  used on input line 59.
 (luatex.def)             Requested size: 378.42001pt x 135.61792pt.
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
-(Font)              scaled to size 8.00003pt on input line 53.
+(Font)              scaled to size 8.00003pt on input line 60.
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
-(Font)              scaled to size 5.60002pt on input line 53.
+(Font)              scaled to size 5.60002pt on input line 60.
 LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
-(Font)              scaled to size 4.00002pt on input line 53.
+(Font)              scaled to size 4.00002pt on input line 60.
 
-Overfull \hbox (5.53226pt too wide) in paragraph at lines 68--69
+Overfull \hbox (5.53226pt too wide) in paragraph at lines 74--75
 [][]\TU/SourceSerifPro(0)/bx/n/12 Ach-tung: Im-mer al-le Wi-der-stän-de par-al
 -lel und in Rei-he zum Kon-den-sa-tor be-rück-sich-ti-gen und Über-
  []
@@ -1920,64 +1910,69 @@ Overfull \hbox (5.53226pt too wide) in paragraph at lines 68--69
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-<./LadekurveKondensator.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
-
- []
-
-<OPV1.png, id=29, 359.744pt x 556.479pt>
+<./LadekurveKondensator.png>] [2] [3]
+<OPV1.png, id=48, 359.744pt x 556.479pt>
 File: OPV1.png Graphic file (type png)
 <use OPV1.png>
-Package luatex.def Info: OPV1.png  used on input line 154.
+Package luatex.def Info: OPV1.png  used on input line 168.
 (luatex.def)             Requested size: 502.75626pt x 777.74916pt.
-<OPV2.png, id=30, 370.45067pt x 561.56467pt>
+<OPV2.png, id=49, 370.45067pt x 561.56467pt>
 File: OPV2.png Graphic file (type png)
 <use OPV2.png>
-Package luatex.def Info: OPV2.png  used on input line 158.
+Package luatex.def Info: OPV2.png  used on input line 172.
 (luatex.def)             Requested size: 513.5706pt x 778.54182pt.
-[2
 
-]
 Overfull \vbox (18.06056pt too high) has occurred while \output is active []
 
 
-[3<./OPV1.png>]
+[4<./OPV1.png>]
 Overfull \vbox (18.85323pt too high) has occurred while \output is active []
 
 
-[4<./OPV2.png>]
-<Transistor.png, id=52, 500.87125pt x 248.93pt>
+[5<./OPV2.png>]
+<Transistor.png, id=60, 500.87125pt x 248.93pt>
 File: Transistor.png Graphic file (type png)
 <use Transistor.png>
-Package luatex.def Info: Transistor.png  used on input line 166.
+Package luatex.def Info: Transistor.png  used on input line 180.
 (luatex.def)             Requested size: 324.36473pt x 161.21382pt.
-<ESBTransistor.png, id=53, 554.82281pt x 227.34938pt>
+<ESBTransistor.png, id=61, 554.82281pt x 227.34938pt>
 File: ESBTransistor.png Graphic file (type png)
 <use ESBTransistor.png>
-Package luatex.def Info: ESBTransistor.png  used on input line 172.
+Package luatex.def Info: ESBTransistor.png  used on input line 186.
 (luatex.def)             Requested size: 324.36473pt x 132.91385pt.
-<TransistorVerstärkerschaltung.png, id=54, 703.87968pt x 669.2503pt>
+<TransistorVerstärkerschaltung.png, id=62, 703.87968pt x 669.2503pt>
 File: TransistorVerstärkerschaltung.png Graphic file (type png)
 <use TransistorVerstärkerschaltung.png>
 Package luatex.def Info: TransistorVerstärkerschaltung.png  used on input line 
-191.
+205.
 (luatex.def)             Requested size: 324.36473pt x 308.4001pt.
- [5<./Transistor.png><./ESBTransistor.png>]
-<TransistorVerstärkerschaltung_Spannungen.png, id=62, 1394.96156pt x 682.04813p
+ [6<./Transistor.png><./ESBTransistor.png>]
+<TransistorVerstärkerschaltung_Spannungen.png, id=70, 1394.96156pt x 682.04813p
 t>
 File: TransistorVerstärkerschaltung_Spannungen.png Graphic file (type png)
 <use TransistorVerstärkerschaltung_Spannungen.png>
 Package luatex.def Info: TransistorVerstärkerschaltung_Spannungen.png  used on 
-input line 196.
+input line 210.
 (luatex.def)             Requested size: 540.60239pt x 264.32214pt.
- [6<./TransistorVerstärkerschaltung.png><./TransistorVerstärkerschaltung_Spann
-ungen.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 199.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 199.
+<TransistorVerstärkerschaltung_OptimalAusgesteuert.png, id=71, 1385.175pt x 664
+.73344pt>
+File: TransistorVerstärkerschaltung_OptimalAusgesteuert.png Graphic file (type 
+png)
+<use TransistorVerstärkerschaltung_OptimalAusgesteuert.png>
+Package luatex.def Info: TransistorVerstärkerschaltung_OptimalAusgesteuert.png 
+ used on input line 215.
+(luatex.def)             Requested size: 540.60239pt x 259.43771pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7<./TransistorVerstärkerschaltung.png><./TransistorVerstärkerschaltung_Spann
+ungen.png>] [8<./TransistorVerstärkerschaltung_OptimalAusgesteuert.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 226.
 
 (./ElektronikFormelsammlung.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 199.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 199.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 226.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 226.
 Package rerunfilecheck Info: File `ElektronikFormelsammlung.out' has not changed
 .
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -1987,36 +1982,35 @@ Package logreq Info: Writing requests to 'ElektronikFormelsammlung.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 54203 strings out of 494407
+ 54439 strings out of 494407
  100000,2373549 words of node,token memory allocated
  652 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 16 attribute, 72 glue_spec
 , 16 attribute_list, 1 write nodes
-   avail lists: 1:4,2:6064,3:1477,4:31,5:391,6:42,7:3935,8:66,9:794,10:11,11:174
-,12:1
- 56794 multiletter control sequences out of 65536+600000
+   avail lists: 1:5,2:6046,3:1476,4:31,5:395,6:42,7:4157,8:65,9:775,10:3,11:103,
+12:1
+ 57015 multiletter control sequences out of 65536+600000
  107 fonts using 17629863 bytes
  73i,20n,89p,9109b,2189s stack positions out of 5000i,500n,10000p,200000b,100000s
-</usr/share/texmf-dist/fonts/opentype/adobe/sourceserifpro/SourceSerifPro-Regula
-r.otf></usr/share/texmf-dist/fonts/opentype/adobe/sourceserifpro/SourceSerifPro-
-Bold.otf></usr/share/texmf-dist/fonts/opentype/adobe/sourcesanspro/SourceSansPro
+</usr/share/texmf-dist/fonts/opentype/adobe/sourceserifpro/SourceSerifPro-Bold.o
+tf></usr/share/texmf-dist/fonts/opentype/adobe/sourceserifpro/SourceSerifPro-Reg
+ular.otf></usr/share/texmf-dist/fonts/opentype/adobe/sourcesanspro/SourceSansPro
 -Regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
-b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/am
-sfonts/cmextra/cmmib6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cme
-xtra/cmmib8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy8.pfb>
-Output written on ElektronikFormelsammlung.pdf (6 pages, 6099497 bytes).
+nts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pf
+b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts
+/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texmf-dist/fonts/type1/pub
+lic/amsfonts/cmextra/cmmib8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on ElektronikFormelsammlung.pdf (8 pages, 6148890 bytes).
 
-PDF statistics: 134 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 131072)
+PDF statistics: 144 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
+ 21 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

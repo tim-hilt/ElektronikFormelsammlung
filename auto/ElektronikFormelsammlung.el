@@ -4,7 +4,7 @@
    (setq TeX-command-extra-options
          "--shell-escape")
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("scrartcl" "a5paper" "12pt")))
+                     '(("scrartcl" "a5paper" "12pt" "twoside")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("circuitikz" "europeanresistors")))
    (TeX-run-style-hooks

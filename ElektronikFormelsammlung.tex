@@ -1,4 +1,4 @@
-\documentclass[a5paper, 12pt]{scrartcl}
+\documentclass[a5paper, 12pt, twoside]{scrartcl}
 
 \usepackage[europeanresistors]{circuitikz}
 \usepackage{siunitx}
@@ -29,16 +29,23 @@
 
 \vspace{.5cm}
 
-\begin{minipage}{.45\textwidth}
-\textbf{Übertragungsfunktion:} \[F = \frac{U_a}{U_e} = \frac{\text{Widerstände parallel zum Ausgang}}{\text{Widerstände parallel zum Eingang}}\]
-
-\textbf{Berechnung zweier, paralleler Widerstände \(R_1\) und \(R_2\):} \[R_1 || R_2 = \frac{R_1 \cdot R_2}{R_1 + R_2}\]
-
-\textbf{Leistung:} \[P = \frac{U^2}{R} = U \cdot \frac{U}{R} = U \cdot I\]
+\begin{minipage}{.48\textwidth}
+  Dummy
 \end{minipage}\hfill\vline\hfill%
-\begin{minipage}{.45\textwidth}
-  \lipsum[4]
-\end{minipage}
+\begin{minipage}{.48\textwidth}
+  \textbf{Spannungsquelle in Stromquelle}
+
+  \begin{circuitikz}
+    \draw (0,0) -- (3,0) to [R, l=\(R_a\)] (6,0) to [open, o-o] (6,-2.5) -- (0,-2.5) to [european current source, l=\(I_e\)] (0,0);
+    \draw (3,0) to [R, l=\(R_i\), *-*] (3,-2.5);
+  \end{circuitikz}
+  \begin{circuitikz}
+    \draw (0,0) to [R, l=\(R_i\)] (3,0) to [R, l=\(R_a\)] (6,0) to [open, o-o] (6,-2.5) -- (0,-2.5) to [european voltage source, l=\(U_e\)] (0,0);
+  \end{circuitikz}
+
+  mit
+  \[U_e = I_e \cdot R_i\]
+  \end{minipage}
 
 \vspace{.5cm}
 {\usekomafont{disposition}\Large 2 Kondensator und Zeitkonstanten}
@@ -62,12 +69,10 @@ Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\
   \end{tabular}
 \end{center}
 
-
 \textbf{Zum Zeichnen im Zeitbereich:} Arbeitsgerade von Anfangsspannung zur Endspannung zeichnen, mit \(t = \tau\)
 
 \mybfcol{Achtung: Immer alle Widerstände parallel und in Reihe zum Kondensator berücksichtigen und Übertragungsfunktion für Ladeziel verwenden!}
 
-\clearpage
 
 \begin{table}[H]
   \centering
@@ -80,8 +85,7 @@ Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\
   \end{tabular}
 \end{table}
  
-{\usekomafont{disposition}\Large 3 Filter}\\
-
+{\usekomafont{disposition}\Large 3 Filter}\\[1em]
 Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \begin{center}
   \begin{tabular}{cllll}
@@ -93,7 +97,6 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
     \bottomrule
   \end{tabular}
 \end{center}
-
 \begin{minipage}{.48\linewidth}
   \begin{figure}[H]
     \centering
@@ -148,6 +151,17 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \item \SI{20}{\decibel} pro Dekade (zehnfache Frequenz) im Sperrbereich
 \end{itemize}
 
+\textbf{Konstruktion von Bode-Diagrammen}
+
+\begin{enumerate}
+\item \(|H(f)|\) bestimmen
+\item \(f_G\) berechnen
+\item Werte für \(f\) in \(|H(f)|\) einsetzen (für \(f=0\) und zwei Werte im Sperrbereich) und \(20\cdot\log(|H(f)|)\) berechnen
+\item Asymptoten zeichnen
+\item Bode Diagramm zeichnen, \(f_G\) befindet sich am Schnittpunkt beider Asymptoten
+\end{enumerate}
+\newpage
+
 % --------------------- OPV ---------------------
 \begin{figure}[H]
   \centering
@@ -159,7 +173,7 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \end{figure}
 % -----------------------------------------------
 
-{\usekomafont{disposition}\Large 4 Transistorp}
+{\usekomafont{disposition}\Large 4 Transistor}
 
 \begin{figure}[H]
   \centering
@@ -195,6 +209,19 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
   \centering
   \includegraphics[width=\textwidth]{TransistorVerstärkerschaltung_Spannungen}
 \end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{TransistorVerstärkerschaltung_OptimalAusgesteuert}
+\end{figure}
+
+\textbf{Optimale Spannungsaussteuerbarkeit}
+
+Spannungen sind im Gleichgewicht
+\[U_C = U_E = \frac{1}{2} \cdot U_{\text{Bat}}\]
+\(U_{\text{Bat}}\) wird immer vollständig auf \(U_C\) und \(U_E\) aufgeteilt.
+\[U_{\text{Bat}} = U_C + U_E\]
+
 
 \end{document}
 
