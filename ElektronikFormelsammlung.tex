@@ -4,6 +4,8 @@
 \usepackage{siunitx}
 \usepackage{lipsum, mystyle}
 
+\graphicspath{./Grafiken/}
+
 \usepackage{scrlayer-scrpage}
 
 \clearpairofpagestyles{}
@@ -30,7 +32,7 @@
 \vspace{.5cm}
 
 \begin{minipage}{.48\textwidth}
-  \(R_1 || R_2 = \frac{R_1 \cdot R_2}{R_1 + R_2}\)
+  \[R_1 || R_2 = \frac{R_1 \cdot R_2}{R_1 + R_2}\]
 \end{minipage}\hfill\vline\hfill%
 \begin{minipage}{.48\textwidth}
   \textbf{Spannungsquelle in Stromquelle}
@@ -84,16 +86,22 @@ Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\
     \bottomrule
   \end{tabular}
 \end{table}
- 
-{\usekomafont{disposition}\Large 3 Filter}\\[1em]
+
+{\usekomafont{disposition}\Large 3 Dioden}\\[1em]
+\mybfcol{Verlustleistung in einer Diode}
+\[P = U_D + I_{D\text{max}}\]
+\mybfcol{Mittlere Verlustleistung in einer Diode}
+\[\frac{1}{T} \int_0^T U_D \cdot I_{D\text{max}}\ dt\]
+
+{\usekomafont{disposition}\Large 4 Filter}\\[1em]
 Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \begin{center}
   \begin{tabular}{cllll}
     \toprule
-    & \textbf{RC-Tiefpass} & \textbf{RC-Hochpass} & \textbf{RL-Tiefpass} & \textbf{RL-Hochpass}\\
+    & \mybfcol{RC-Tiefpass} & \mybfcol{RC-Hochpass} & \mybfcol{RL-Tiefpass} & \mybfcol{RL-Hochpass}\\
     \midrule
-    \textbf{Übertragungsfunktion \(\frac{U_a}{U_e} = H(j\omega)\)} & \(\frac{1}{1 + j\omega R C}\) & \(\frac{j\omega RC}{1 + j\omega RC}\) & \(\frac{R}{R + j \omega L}\)& \(\frac{j\omega L}{R + j \omega L}\) \\[1em]
-    \textbf{Grenzfrequenz \(f_G / \omega_G\)} & \(\frac{1}{2 \pi R C}; \frac{1}{RC}\) & \(\frac{1}{2 \pi R C}; \frac{1}{RC}\) & \(\frac{R}{2 \pi L}; \frac{R}{L}\) & \(\frac{R}{2 \pi L}; \frac{R}{L}\)\\
+    \mybfcol{Übertragungsfunktion} \(\frac{U_a}{U_e} = H(j\omega)\) & \(\frac{1}{1 + j\omega R C}\) & \(\frac{j\omega RC}{1 + j\omega RC}\) & \(\frac{R}{R + j \omega L}\)& \(\frac{j\omega L}{R + j \omega L}\) \\[1em]
+    \mybfcol{Grenzfrequenz} \(f_G / \omega_G\) & \(\frac{1}{2 \pi R C}; \frac{1}{RC}\) & \(\frac{1}{2 \pi R C}; \frac{1}{RC}\) & \(\frac{R}{2 \pi L}; \frac{R}{L}\) & \(\frac{R}{2 \pi L}; \frac{R}{L}\)\\
     \bottomrule
   \end{tabular}
 \end{center}
@@ -173,7 +181,7 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \end{figure}
 % -----------------------------------------------
 
-{\usekomafont{disposition}\Large 4 Transistor}
+{\usekomafont{disposition}\Large 5 Transistor}
 
 \begin{figure}[H]
   \centering
@@ -190,13 +198,12 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 
 \textbf{Emitterstrom}
 \[I_E = I_B + I_C\]
-
+\textbf{Spannungsverstärkung}
+\[v_u = \frac{\Delta U_a}{\Delta U_e} = -S \cdot R_C\]
 \textbf{Stromverstärkung}
 \[I_C = \beta \cdot I_B\]
-
 \textbf{Verlustleistung}
 \[P = U_{CE} \cdot I_C\]
-
 \textbf{Steilheit}
 \[S = \frac{\Delta I_C}{\Delta U_{BE}} = \frac{I_C}{U_T}\]
 
@@ -221,6 +228,24 @@ Spannungen sind im Gleichgewicht
 \[U_C = U_E = \frac{1}{2} \cdot U_{\text{Bat}}\]
 \(U_{\text{Bat}}\) wird immer vollständig auf \(U_C\) und \(U_E\) aufgeteilt.
 \[U_{\text{Bat}} = U_C + U_E\]
+
+\textbf{Arbeitsgerade zeichnen}
+
+\begin{enumerate}
+\item Betrachte Transistor im gesperrten Zustand \(\rightarrow U_{CE} = U_B, I_C = 0\)
+\item Punkt auf der \(x\)-Achse bei \(U_{CE} = U_B\) zeichnen
+\item Betrachte Transistor im gesättigten Bereich \(\rightarrow U_{CE} = 0, I_C = I_{Cmax}\)
+\item Berechne \(I_{Cmax}\) durch Spannungsteilerformel \(I_C = \frac{U_B}{R_C + R_E}\)
+\item Punkt auf der \(y\)-Achse bei \(I_C = I_{Cmax}\) zeichnen
+\item Beide Punkte durch Arbeitsgerade verbinden
+\item \(U_{CE}\) im Arbeitspunkt (gegeben) kennzeichnen
+\end{enumerate}
+
+\textbf{Kollektorstrom \(I_C\) im Arbeitspunkt}\\
+(Für gegebenes \(U_{CE0}\) im Arbeitspunkt)
+\[I_{C0} = \frac{U_B - U_{CE0}}{R_C + R_E}\]
+
+\[r_{BE} = \frac{U_T}{I_B} \qquad; U_T = \SI{26}{\milli\volt}\]
 
 
 \end{document}
