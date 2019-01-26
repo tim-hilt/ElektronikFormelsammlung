@@ -1,12 +1,17 @@
 \documentclass[a5paper, 12pt, twoside]{scrartcl}
 
 \usepackage[europeanresistors]{circuitikz}
-\usepackage{siunitx}
-\usepackage{lipsum, mystyle}
 
-\graphicspath{./Grafiken/}
 
-\usepackage{scrlayer-scrpage}
+\usepackage{scrlayer-scrpage, siunitx, mystyle}
+
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{0ex}{0ex}
+\titlespacing{\subsection}{0pt}{1ex}{0ex}
+\titlespacing{\subsubsection}{0pt}{0.5ex}{0ex}
+\setlength{\parskip}{0.3cm}
+
+\graphicspath{{./Grafiken/}}
 
 \clearpairofpagestyles{}
 
@@ -27,12 +32,25 @@
   \usekomafont{disposition}\huge Elektronik Formelsammlung
 \end{center}
 
-{\usekomafont{disposition}\Large 1 Grundlagen und Wiederholung}
-
-\vspace{.5cm}
+\section{Grundlagen und Wiederholung}
 
 \begin{minipage}{.48\textwidth}
+  \textbf{Übertragungsfunktion}
+  \[\frac{U_a}{U_e} = \frac{\text{Widerstände parallel zum Ausgang}}{\text{Widerstände parallel zum Eingang}}\]
+  \textbf{Widerstände parallel zueinander}
   \[R_1 || R_2 = \frac{R_1 \cdot R_2}{R_1 + R_2}\]
+  \textbf{Dezimalpräfixe}
+  
+  {\centering
+    \begin{tabular}{lll}
+      \(n\) & Nano & \(\cdot 10^{-9}\)\\
+      \(\mu\) & Micro & \(\cdot 10^{-6}\)\\
+      \(m\) & Milli & \(\cdot 10^{-3}\)\\
+      \(K\) & Kilo & \(\cdot 10^3\)\\
+      \(M\) & Mega & \(\cdot 10^6\)\\
+      \(G\) & Giga & \(\cdot 10^9\)
+    \end{tabular}\par
+  }
 \end{minipage}\hfill\vline\hfill%
 \begin{minipage}{.48\textwidth}
   \textbf{Spannungsquelle in Stromquelle}
@@ -47,11 +65,9 @@
 
   mit
   \[U_e = I_e \cdot R_i\]
-  \end{minipage}
+\end{minipage}
 
-\vspace{.5cm}
-{\usekomafont{disposition}\Large 2 Kondensator und Zeitkonstanten}
-\vspace{.5cm}
+\section{Kondensator und Zeitkonstanten}
 
 Zeitkonstante \(\tau\) beim \mybfcol{Kondensator}: \dotfill \(\tau = R \cdot C\)\\
 Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\\
@@ -75,7 +91,6 @@ Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\
 
 \mybfcol{Achtung: Immer alle Widerstände parallel und in Reihe zum Kondensator berücksichtigen und Übertragungsfunktion für Ladeziel verwenden!}
 
-
 \begin{table}[H]
   \centering
   \begin{tabular}{cc}
@@ -87,13 +102,16 @@ Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\
   \end{tabular}
 \end{table}
 
-{\usekomafont{disposition}\Large 3 Dioden}\\[1em]
+\section{Dioden}
+
 \mybfcol{Verlustleistung in einer Diode}
 \[P = U_D + I_{D\text{max}}\]
 \mybfcol{Mittlere Verlustleistung in einer Diode}
 \[\frac{1}{T} \int_0^T U_D \cdot I_{D\text{max}}\ dt\]
+\mybfcol{Notiz zu Zenerdioden:} Eine Zenerdiode beginnt erst zu wirken, wenn die an der negativen Seite anliegende Spannung \textbf{größer als \(U_{Z0}\)} ist.
 
-{\usekomafont{disposition}\Large 4 Filter}\\[1em]
+\section{Filter und Übertragungsfunktionen}
+
 Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \begin{center}
   \begin{tabular}{cllll}
@@ -181,19 +199,23 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \end{figure}
 % -----------------------------------------------
 
-{\usekomafont{disposition}\Large 5 Transistor}
+\section{Transistor}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.6\textwidth]{Transistor}
-  \caption{Ströme im Transistor}
-\end{figure}
+\begin{minipage}{.49\linewidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Transistor}
+    \caption{Ströme im Transistor}
+  \end{figure}
+\end{minipage}\hfill\vline\hfill%
+\begin{minipage}{.49\linewidth}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ESBTransistor}
+    \caption{Ersatzschaltbild eines Bipolartransistors}
+  \end{figure}
+\end{minipage}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.6\textwidth]{ESBTransistor}
-  \caption{Ersatzschaltbild eines Bipolartransistors}
-\end{figure}
 \mybfcol{Achtung: Beim Zeichnen des Ersatzschaltbildes wird die Spannungsquelle kurzgeschlossen! Das heißt überall wo vorher die Versorgungsspannung war ist nun GND.}
 
 \textbf{Emitterstrom}
@@ -207,30 +229,13 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \textbf{Steilheit}
 \[S = \frac{\Delta I_C}{\Delta U_{BE}} = \frac{I_C}{U_T}\]
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.6\textwidth]{TransistorVerstärkerschaltung}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{TransistorVerstärkerschaltung_Spannungen}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{TransistorVerstärkerschaltung_OptimalAusgesteuert}
-\end{figure}
-
-\textbf{Optimale Spannungsaussteuerbarkeit}
-
+\textbf{Optimale Spannungsaussteuerbarkeit}\\
 Spannungen sind im Gleichgewicht
 \[U_C = U_E = \frac{1}{2} \cdot U_{\text{Bat}}\]
 \(U_{\text{Bat}}\) wird immer vollständig auf \(U_C\) und \(U_E\) aufgeteilt.
 \[U_{\text{Bat}} = U_C + U_E\]
 
-\textbf{Arbeitsgerade zeichnen}
-
+\textbf{Arbeitsgerade zeichnen}\\
 \begin{enumerate}
 \item Betrachte Transistor im gesperrten Zustand \(\rightarrow U_{CE} = U_B, I_C = 0\)
 \item Punkt auf der \(x\)-Achse bei \(U_{CE} = U_B\) zeichnen
@@ -247,6 +252,23 @@ Spannungen sind im Gleichgewicht
 
 \[r_{BE} = \frac{U_T}{I_B} \qquad; U_T = \SI{26}{\milli\volt}\]
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.6\textwidth]{TransistorVerstärkerschaltung}
+\end{figure}
+
+\begin{minipage}{.5\linewidth}
+  {\centering
+    \includegraphics[angle=90, origin=c, width=\textwidth]{TransistorVerstärkerschaltung_Spannungen}
+    \captionof{figure}{Spannungen an Emitterschaltung}\par%
+  }
+\end{minipage}%
+\begin{minipage}{.5\linewidth}
+  {\centering
+    \includegraphics[angle=90, origin=c, width=\textwidth]{TransistorVerstärkerschaltung_OptimalAusgesteuert}
+    \captionof{figure}{Spannungen an Emitterschaltung; optimale Aussteuerung}\par%
+  }
+\end{minipage}
 
 \end{document}
 
