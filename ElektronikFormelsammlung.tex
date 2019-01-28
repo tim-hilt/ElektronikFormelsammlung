@@ -26,7 +26,7 @@
 }
 
 \begin{document}
-
+\sffamily
 \newgeometry{left=1cm, right=1cm, top=2cm, bottom=1cm}
 \begin{center}
   \usekomafont{disposition}\huge Elektronik Formelsammlung
@@ -50,6 +50,8 @@
   \vspace{1em}
   \mybfcol{Übertragungsfunktion}
   \[\frac{U_a}{U_e} = \frac{\text{Widerstände parallel zum Ausgang}}{\text{Widerstände parallel zum Eingang}}\]
+  \mytextcol{\footnotesize Falls nach Widerständen gefragt ist lohnt es sich u.U.\ \(\displaystyle\frac{U_e}{U_a}\) zu betrachten, da dann einzelne Brüche aufgestellt und leicht gekürzt werden kann.}
+
   \mybfcol{Widerstände parallel zueinander}
   \[R_1 || R_2 = \frac{R_1 \cdot R_2}{R_1 + R_2}\]
 \end{minipage}\hfill\vline\hfill%
@@ -68,6 +70,8 @@
   \[U_e = I_e \cdot R_i\]
 \end{minipage}
 
+\vspace{1cm}
+
 \section{Kondensator und Zeitkonstanten}
 
 Zeitkonstante \(\tau\) beim \mybfcol{Kondensator}: \dotfill \(\tau = R \cdot C\)
@@ -80,11 +84,12 @@ Beziehung zwischen zufließender bzw.\ abfließender Ladung und Spannung:
 
 Energie im Kondensator:\dotfill\(W = \frac{1}{2} \cdot C \cdot U^2\)
 
-\begin{figure}[H]
-  \centering
+\clearpage
+
+{\centering
   \includegraphics[width=.7\textwidth]{LadekurveKondensator}
-  \caption{Ladekurven Kondensator \mybfcol{Achtung: \(t = \Delta t = t_1 - t_0\)}}
-\end{figure}
+  \captionof{figure}{Ladekurven Kondensator \mybfcol{Achtung:} \(t = \Delta t = t_1 - t_0\)}
+}
 
 \begin{center}
   \begin{tabular}{ll}
@@ -97,7 +102,7 @@ Energie im Kondensator:\dotfill\(W = \frac{1}{2} \cdot C \cdot U^2\)
 
 \textbf{Zum Zeichnen im Zeitbereich:} Arbeitsgerade von Anfangsspannung zur Endspannung zeichnen, mit \(t = \tau\)
 
-\mybfcol{Achtung: Immer alle Widerstände parallel und in Reihe zum Kondensator berücksichtigen und Übertragungsfunktion für Ladeziel verwenden!}
+\mybfcol{Achtung:} Immer alle Widerstände parallel und in Reihe zum Kondensator berücksichtigen und Übertragungsfunktion für Ladeziel verwenden!
 
 \begin{table}[H]
   \centering
@@ -247,16 +252,20 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
   \end{figure}
 \end{minipage}
 
-\textbf{Achtung: Beim Zeichnen des Ersatzschaltbildes wird die Spannungsquelle kurzgeschlossen! Das heißt überall wo vorher die Versorgungsspannung war ist nun GND.}
+\mybfcol{Achtung:} Beim Zeichnen des Ersatzschaltbildes wird die Spannungsquelle kurzgeschlossen! Das heißt überall wo vorher die Versorgungsspannung war ist nun GND.\@
 
-\mybfcol{Stromverstärkung}\dotfill\(I_C = \beta \cdot I_B\)\\[1em]
-\mybfcol{Verlustleistung}\dotfill\(P = U_{CE} \cdot I_C\)\\[1em]
-\mybfcol{Steilheit}\dotfill\(S = \frac{\Delta I_C}{\Delta U_{BE}} = \frac{I_C}{U_T}\)\\[1em]
-\mybfcol{Spannungsverstärkung}\dotfill\(v_u = \frac{\Delta U_a}{\Delta U_e} = -S \cdot R_C\)\\[1em]
-\mybfcol{Kollektorstrom:}\dotfill\(I_C = B \cdot I_B \cdot (1 + \lambda U_{CE}) = B \cdot I_B + \frac{U_{CE}}{r_{CE}}\)\\[1em]
-\mybfcol{Kollektor-Emitter-Widerstand mit Early-Spannung:}\dotfill\(r_{CE} = \frac{U_y + U_{CE}}{I_C} = \frac{U_y}{B \cdot I_B}\)
+\mybfcol{Stromverstärkung}\dotfill\(\displaystyle I_C = \beta \cdot I_B\)\\[1em]
+\mybfcol{Verlustleistung}\dotfill\(\displaystyle P = U_{CE} \cdot I_C\)\\[1em]
+\mybfcol{Steilheit}\dotfill\(\displaystyle S = \frac{\Delta I_C}{\Delta U_{BE}} = \frac{I_C}{U_T}\)\\[1em]
+\mybfcol{Spannungsverstärkung}\dotfill\(\displaystyle v_u = \frac{\Delta U_a}{\Delta U_e} = -S \cdot R_C\)\\[1em]
+\mybfcol{Kollektorstrom:}\dotfill\(\displaystyle I_C = B \cdot I_B \cdot (1 + \lambda U_{CE}) = B \cdot I_B + \frac{U_{CE}}{r_{CE}}\)\\[1em]
+\mybfcol{Kollektor-Emitter-Widerstand mit Early-Spannung:}\dotfill\(\displaystyle r_{CE} = \frac{U_y + U_{CE}}{I_C} = \frac{U_y}{B \cdot I_B}\)\\[1em]
+\textbf{\textcolor{myblue}{Außerdem gilt:\dotfill\(\displaystyle S = \frac{B}{r_{BE}}\)}}\\[1em]
+\textcolor{myblue}{Dies ergibt sich aus der Umformung von \(r_{BE}\) und \(S\) nach \(U_T\), dem anschließenden Gleichsetzen sowie dem ersetzen von \(I_C\) mit \(B \cdot I_B\).}
 
-\mybfcol{Arbeitsgerade zeichnen}\\
+\vspace{.5cm}
+
+\mybfcol{Arbeitsgerade zeichnen}
 \begin{enumerate}
 \item Betrachte Transistor im gesperrten Zustand \(\rightarrow U_{CE} = U_B, I_C = 0\)
 \item Punkt auf der \(x\)-Achse bei \(U_{CE} = U_B\) zeichnen
@@ -266,6 +275,8 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \item Beide Punkte durch Arbeitsgerade verbinden
 \item \(U_{CE}\) im Arbeitspunkt (gegeben) kennzeichnen
 \end{enumerate}
+
+\clearpage
 
 \mybfcol{Kollektorstrom \(I_C\) im Arbeitspunkt}\\
 (Für gegebenes \(U_{CE0}\) im Arbeitspunkt)
