@@ -114,6 +114,7 @@ Energie im Kondensator:\dotfill\(W = \frac{1}{2} \cdot C \cdot U^2\)
 
 \begin{minipage}{.69\linewidth}
   \mybfcol{Strom durch Diode}\dotfill\(I_D = I_{S0} \cdot \left( e^{\frac{U_D}{mU_T}}-1 \right)\)\\[1em]
+  \mybfcol{Spannung über einer Diode}\dotfill\(U_D = m \cdot U_T \cdot \ln\left(\frac{I_D}{I_{S0}} + 1\right)\)\\[1em]
   \mybfcol{Verlustleistung in einer Diode}\dotfill\(P = U_D + I_{D\text{max}}\)\\[1em]
   \mybfcol{Mittlere Verlustleistung in einer Diode}\dotfill\(\frac{1}{T} \int_0^T U_D \cdot I_{D\text{max}}\ dt\)\\[1em]
   \mybfcol{thermischer Widerstand}\dotfill\(R_{\text{th}} = \frac{\Delta T}{P}\)\\[1em]
@@ -191,6 +192,7 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 
 \begin{minipage}[t]{.48\linewidth}
   \mybfcol{Dämpfung bei passiven Filtern erster Ordnung:}
+  
   \begin{itemize}
   \item Dämpfung um einen Anfangswert im Durchlassbereich (Muss berechnet werden, indem\\ \(20 \cdot \log(|H(0)|)\) berechnet wird)
   \item Anfangswert \(- \SI{3}{\decibel}\) an der Grenzfrequenz \(f_G\), bzw.\ Anfangswert \(\cdot \frac{1}{\sqrt{2}}\)
@@ -200,6 +202,7 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \end{minipage}\hfill\vline\hfill%
 \begin{minipage}[t]{.48\linewidth}
   \mybfcol{Konstruktion von Bode-Diagrammen:}
+  
   \begin{enumerate}
   \item \(|H(f)|\) bestimmen
   \item \(f_G\) berechnen
@@ -211,7 +214,8 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 
 \vspace{1cm}
 
-\mytextcol{Phase in einem \(RC\)-Netzwerk:}\dotfill\(-\arctan(\omega RC)\)
+\mytextcol{Phase in einem \(RC\)-Netzwerk:}\dotfill\(-\arctan(\omega RC)\)\\
+\mybfcol{\(\rightarrow\)Achtung:} Bei Phasenberechnung Taschenrechner auf \texttt{[Deg]} stellen!
 
 \newpage
 
@@ -245,13 +249,12 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 
 \textbf{Achtung: Beim Zeichnen des Ersatzschaltbildes wird die Spannungsquelle kurzgeschlossen! Das heißt überall wo vorher die Versorgungsspannung war ist nun GND.}
 
-\mybfcol{Spannungsverstärkung}\dotfill\(v_u = \frac{\Delta U_a}{\Delta U_e} = -S \cdot R_C\)
-
-\mybfcol{Stromverstärkung}\dotfill\(I_C = \beta \cdot I_B\)
-
-\mybfcol{Verlustleistung}\dotfill\(P = U_{CE} \cdot I_C\)
-
-\mybfcol{Steilheit}\dotfill\(S = \frac{\Delta I_C}{\Delta U_{BE}} = \frac{I_C}{U_T}\)
+\mybfcol{Stromverstärkung}\dotfill\(I_C = \beta \cdot I_B\)\\[1em]
+\mybfcol{Verlustleistung}\dotfill\(P = U_{CE} \cdot I_C\)\\[1em]
+\mybfcol{Steilheit}\dotfill\(S = \frac{\Delta I_C}{\Delta U_{BE}} = \frac{I_C}{U_T}\)\\[1em]
+\mybfcol{Spannungsverstärkung}\dotfill\(v_u = \frac{\Delta U_a}{\Delta U_e} = -S \cdot R_C\)\\[1em]
+\mybfcol{Kollektorstrom:}\dotfill\(I_C = B \cdot I_B \cdot (1 + \lambda U_{CE}) = B \cdot I_B + \frac{U_{CE}}{r_{CE}}\)\\[1em]
+\mybfcol{Kollektor-Emitter-Widerstand mit Early-Spannung:}\dotfill\(r_{CE} = \frac{U_y + U_{CE}}{I_C} = \frac{U_y}{B \cdot I_B}\)
 
 \mybfcol{Arbeitsgerade zeichnen}\\
 \begin{enumerate}
