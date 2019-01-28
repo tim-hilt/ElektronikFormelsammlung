@@ -34,12 +34,8 @@
 
 \section{Grundlagen und Wiederholung}
 
-\begin{minipage}{.48\textwidth}
-  \textbf{Übertragungsfunktion}
-  \[\frac{U_a}{U_e} = \frac{\text{Widerstände parallel zum Ausgang}}{\text{Widerstände parallel zum Eingang}}\]
-  \textbf{Widerstände parallel zueinander}
-  \[R_1 || R_2 = \frac{R_1 \cdot R_2}{R_1 + R_2}\]
-  \textbf{Dezimalpräfixe}
+\begin{minipage}[t]{.48\textwidth}
+  \mybfcol{Dezimalpräfixe}
   
   {\centering
     \begin{tabular}{lll}
@@ -51,9 +47,14 @@
       \(G\) & Giga & \(\cdot 10^9\)
     \end{tabular}\par
   }
+  \vspace{1em}
+  \mybfcol{Übertragungsfunktion}
+  \[\frac{U_a}{U_e} = \frac{\text{Widerstände parallel zum Ausgang}}{\text{Widerstände parallel zum Eingang}}\]
+  \mybfcol{Widerstände parallel zueinander}
+  \[R_1 || R_2 = \frac{R_1 \cdot R_2}{R_1 + R_2}\]
 \end{minipage}\hfill\vline\hfill%
-\begin{minipage}{.48\textwidth}
-  \textbf{Spannungsquelle in Stromquelle}
+\begin{minipage}[t]{.48\textwidth}
+  \mybfcol{Spannungsquelle in Stromquelle}
 
   \begin{circuitikz}
     \draw (0,0) -- (3,0) to [R, l=\(R_a\)] (6,0) to [open, o-o] (6,-2.5) -- (0,-2.5) to [european current source, l=\(I_e\)] (0,0);
@@ -69,8 +70,15 @@
 
 \section{Kondensator und Zeitkonstanten}
 
-Zeitkonstante \(\tau\) beim \mybfcol{Kondensator}: \dotfill \(\tau = R \cdot C\)\\
-Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\\
+Zeitkonstante \(\tau\) beim \mybfcol{Kondensator}: \dotfill \(\tau = R \cdot C\)
+
+Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)
+
+Beziehung zwischen zufließender bzw.\ abfließender Ladung und Spannung:
+\[i(t) = \frac{dQ}{dt} = C \cdot \frac{du(t)}{dt} \Rightarrow u(t) = \frac{1}{C} \cdot \int i(t)\ dt\]
+\mytextcol{\(\rightarrow\) Kondensator integriert den Strom auf!}
+
+Energie im Kondensator:\dotfill\(W = \frac{1}{2} \cdot C \cdot U^2\)
 
 \begin{figure}[H]
   \centering
@@ -81,8 +89,8 @@ Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\
 \begin{center}
   \begin{tabular}{ll}
     \toprule
-    Wenn Ladung von \SI{0}{\volt} nach \(U_e\): & \(U_a = U_e \cdot (1 - e^{-\frac{t}{\tau}})\)\\
-    Wenn Entladung von \(A\) nach \SI{0}{\volt} & \(U_a = U_e \cdot e^{-\frac{t}{\tau}}\)\\
+    Wenn Ladung von \SI{0}{\volt} nach \(U_e\): & \(U_C = U_e \cdot (1 - e^{-\frac{t}{\tau}})\)\\
+    Wenn Entladung von \(U_C\) nach \SI{0}{\volt} & \(U_a = U_C \cdot e^{-\frac{t}{\tau}}\)\\
     \bottomrule
   \end{tabular}
 \end{center}
@@ -104,16 +112,31 @@ Zeitkonstante \(\tau\) bei der \mybfcol{Spule}: \dotfill \(\tau = \frac{L}{R}\)\
 
 \section{Dioden}
 
-\mybfcol{Verlustleistung in einer Diode}
-\[P = U_D + I_{D\text{max}}\]
-\mybfcol{Mittlere Verlustleistung in einer Diode}
-\[\frac{1}{T} \int_0^T U_D \cdot I_{D\text{max}}\ dt\]
+\begin{minipage}{.69\linewidth}
+  \mybfcol{Strom durch Diode}\dotfill\(I_D = I_{S0} \cdot \left( e^{\frac{U_D}{mU_T}}-1 \right)\)\\[1em]
+  \mybfcol{Verlustleistung in einer Diode}\dotfill\(P = U_D + I_{D\text{max}}\)\\[1em]
+  \mybfcol{Mittlere Verlustleistung in einer Diode}\dotfill\(\frac{1}{T} \int_0^T U_D \cdot I_{D\text{max}}\ dt\)\\[1em]
+  \mybfcol{thermischer Widerstand}\dotfill\(R_{\text{th}} = \frac{\Delta T}{P}\)\\[1em]
+  \mybfcol{temperaturbedingter Zusatzwiderstand}\dotfill\(r_{z\text{th}} = TK_U \cdot U^2_{Z0} \cdot R_{\text{th}}\)
+\end{minipage}\hfill%
+\begin{minipage}{.29\linewidth}
+  {\centering
+    \includegraphics[width=.4\textwidth]{ESB_ZDiode}
+    \captionof{figure}{Ersatzschaltbild einer Z-Diode}\par
+  }
+\end{minipage}
+
+\vspace{1cm}
+
 \mybfcol{Notiz zu Zenerdioden:} Eine Zenerdiode beginnt erst zu wirken, wenn die an der negativen Seite anliegende Spannung \textbf{größer als \(U_{Z0}\)} ist.
+
+\clearpage
 
 \section{Filter und Übertragungsfunktionen}
 
 Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
-\begin{center}
+
+{\centering
   \begin{tabular}{cllll}
     \toprule
     & \mybfcol{RC-Tiefpass} & \mybfcol{RC-Hochpass} & \mybfcol{RL-Tiefpass} & \mybfcol{RL-Hochpass}\\
@@ -121,71 +144,75 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
     \mybfcol{Übertragungsfunktion} \(\frac{U_a}{U_e} = H(j\omega)\) & \(\frac{1}{1 + j\omega R C}\) & \(\frac{j\omega RC}{1 + j\omega RC}\) & \(\frac{R}{R + j \omega L}\)& \(\frac{j\omega L}{R + j \omega L}\) \\[1em]
     \mybfcol{Grenzfrequenz} \(f_G / \omega_G\) & \(\frac{1}{2 \pi R C}; \frac{1}{RC}\) & \(\frac{1}{2 \pi R C}; \frac{1}{RC}\) & \(\frac{R}{2 \pi L}; \frac{R}{L}\) & \(\frac{R}{2 \pi L}; \frac{R}{L}\)\\
     \bottomrule
-  \end{tabular}
-\end{center}
-\begin{minipage}{.48\linewidth}
-  \begin{figure}[H]
-    \centering
+  \end{tabular}\par
+  }
+\begin{minipage}{.49\linewidth}
+  {\centering
     \begin{circuitikz}
       \draw (0,0) to [R, l=\(R\)] (4,0) to [C, l_=\(C\)] (4,-2) node[rground]{};
       \draw (0,0) to [european voltage source] (0,-2) node[rground]{};
       \draw (-.5,0) to [open, v=\(U_e\)] (-.5,-2);
       \draw (4.5,0) to [open, v^=\(U_a\)] (4.5,-2);
     \end{circuitikz}
-    \caption{RC-Tiefpass}
-  \end{figure}
-  \begin{figure}[H]
-    \centering
+    \captionof{figure}{RC-Tiefpass}\par
+  }
+  {\centering
     \begin{circuitikz}
       \draw (0,0) to [L, l=\(L\)] (4,0) to [R, l_=\(R\)] (4,-2) node[rground]{};
       \draw (0,0) to [european voltage source] (0,-2) node[rground]{};
       \draw (-.5,0) to [open, v=\(U_e\)] (-.5,-2);
       \draw (4.5,0) to [open, v^=\(U_a\)] (4.5,-2);
     \end{circuitikz}
-    \caption{RL-Tiefpass}
-  \end{figure}
+    \captionof{figure}{RL-Tiefpass}\par
+  }
 \end{minipage}\hfill%
-\begin{minipage}{.48\linewidth}
-  \begin{figure}[H]
-    \centering
+\begin{minipage}{.49\linewidth}
+  {\centering
     \begin{circuitikz}
       \draw (0,0) to [C, l=\(C\)] (4,0) to [R, l_=\(R\)] (4,-2) node[rground]{};
       \draw (0,0) to [european voltage source] (0,-2) node[rground]{};
       \draw (-.5,0) to [open, v=\(U_e\)] (-.5,-2);
       \draw (4.5,0) to [open, v^=\(U_a\)] (4.5,-2);
     \end{circuitikz}
-    \caption{RC-Hochpass}
-  \end{figure}
-  \begin{figure}[H]
-    \centering
+    \captionof{figure}{RC-Hochpass}\par
+  }
+  {\centering
     \begin{circuitikz}
       \draw (0,0) to [R, l=\(R\)] (4,0) to [L, l_=\(L\)] (4,-2) node[rground]{};
       \draw (0,0) to [european voltage source] (0,-2) node[rground]{};
       \draw (-.5,0) to [open, v=\(U_e\)] (-.5,-2);
       \draw (4.5,0) to [open, v^=\(U_a\)] (4.5,-2);
     \end{circuitikz}
-    \caption{RL-Hochpass}
-  \end{figure}
+    \captionof{figure}{RL-Hochpass}\par
+  }
 \end{minipage}
 
-\textbf{Dämpfung bei passiven Filtern erster Ordnung:}
+\vspace{1cm}
 
-\begin{itemize}
-\item Dämpfung um einen Anfangswert im Durchlassbereich (Muss berechnet werden, indem\\ \(20 \cdot \log(|H(0)|)\) berechnet wird)
-\item Anfangswert \(- \SI{3}{\decibel}\) an der Grenzfrequenz \(f_G\)
-\item \SI{6}{\decibel} pro Oktave (doppelte Frequenz) im Sperrbereich
-\item \SI{20}{\decibel} pro Dekade (zehnfache Frequenz) im Sperrbereich
-\end{itemize}
+\begin{minipage}[t]{.48\linewidth}
+  \mybfcol{Dämpfung bei passiven Filtern erster Ordnung:}
+  \begin{itemize}
+  \item Dämpfung um einen Anfangswert im Durchlassbereich (Muss berechnet werden, indem\\ \(20 \cdot \log(|H(0)|)\) berechnet wird)
+  \item Anfangswert \(- \SI{3}{\decibel}\) an der Grenzfrequenz \(f_G\), bzw.\ Anfangswert \(\cdot \frac{1}{\sqrt{2}}\)
+  \item \SI{6}{\decibel} pro Oktave (doppelte Frequenz) im Sperrbereich
+  \item \SI{20}{\decibel} pro Dekade (zehnfache Frequenz) im Sperrbereich
+  \end{itemize}
+\end{minipage}\hfill\vline\hfill%
+\begin{minipage}[t]{.48\linewidth}
+  \mybfcol{Konstruktion von Bode-Diagrammen:}
+  \begin{enumerate}
+  \item \(|H(f)|\) bestimmen
+  \item \(f_G\) berechnen
+  \item Werte für \(f\) in \(|H(f)|\) einsetzen (für \(f=0\) und zwei Werte im Sperrbereich) und \(20\cdot\log(|H(f)|)\) berechnen
+  \item Asymptoten zeichnen
+  \item Bode Diagramm zeichnen, \(f_G\) befindet sich am Schnittpunkt beider Asymptoten
+  \end{enumerate}
+\end{minipage}
 
-\textbf{Konstruktion von Bode-Diagrammen}
+\vspace{1cm}
 
-\begin{enumerate}
-\item \(|H(f)|\) bestimmen
-\item \(f_G\) berechnen
-\item Werte für \(f\) in \(|H(f)|\) einsetzen (für \(f=0\) und zwei Werte im Sperrbereich) und \(20\cdot\log(|H(f)|)\) berechnen
-\item Asymptoten zeichnen
-\item Bode Diagramm zeichnen, \(f_G\) befindet sich am Schnittpunkt beider Asymptoten
-\end{enumerate}
+\mytextcol{Phase in einem \(RC\)-Netzwerk:}\dotfill\(-\arctan(\omega RC)\)
+
 \newpage
 
 % --------------------- OPV ---------------------
@@ -216,26 +243,17 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
   \end{figure}
 \end{minipage}
 
-\mybfcol{Achtung: Beim Zeichnen des Ersatzschaltbildes wird die Spannungsquelle kurzgeschlossen! Das heißt überall wo vorher die Versorgungsspannung war ist nun GND.}
+\textbf{Achtung: Beim Zeichnen des Ersatzschaltbildes wird die Spannungsquelle kurzgeschlossen! Das heißt überall wo vorher die Versorgungsspannung war ist nun GND.}
 
-\textbf{Emitterstrom}
-\[I_E = I_B + I_C\]
-\textbf{Spannungsverstärkung}
-\[v_u = \frac{\Delta U_a}{\Delta U_e} = -S \cdot R_C\]
-\textbf{Stromverstärkung}
-\[I_C = \beta \cdot I_B\]
-\textbf{Verlustleistung}
-\[P = U_{CE} \cdot I_C\]
-\textbf{Steilheit}
-\[S = \frac{\Delta I_C}{\Delta U_{BE}} = \frac{I_C}{U_T}\]
+\mybfcol{Spannungsverstärkung}\dotfill\(v_u = \frac{\Delta U_a}{\Delta U_e} = -S \cdot R_C\)
 
-\textbf{Optimale Spannungsaussteuerbarkeit}\\
-Spannungen sind im Gleichgewicht
-\[U_C = U_E = \frac{1}{2} \cdot U_{\text{Bat}}\]
-\(U_{\text{Bat}}\) wird immer vollständig auf \(U_C\) und \(U_E\) aufgeteilt.
-\[U_{\text{Bat}} = U_C + U_E\]
+\mybfcol{Stromverstärkung}\dotfill\(I_C = \beta \cdot I_B\)
 
-\textbf{Arbeitsgerade zeichnen}\\
+\mybfcol{Verlustleistung}\dotfill\(P = U_{CE} \cdot I_C\)
+
+\mybfcol{Steilheit}\dotfill\(S = \frac{\Delta I_C}{\Delta U_{BE}} = \frac{I_C}{U_T}\)
+
+\mybfcol{Arbeitsgerade zeichnen}\\
 \begin{enumerate}
 \item Betrachte Transistor im gesperrten Zustand \(\rightarrow U_{CE} = U_B, I_C = 0\)
 \item Punkt auf der \(x\)-Achse bei \(U_{CE} = U_B\) zeichnen
@@ -246,29 +264,24 @@ Spannungen sind im Gleichgewicht
 \item \(U_{CE}\) im Arbeitspunkt (gegeben) kennzeichnen
 \end{enumerate}
 
-\textbf{Kollektorstrom \(I_C\) im Arbeitspunkt}\\
+\mybfcol{Kollektorstrom \(I_C\) im Arbeitspunkt}\\
 (Für gegebenes \(U_{CE0}\) im Arbeitspunkt)
 \[I_{C0} = \frac{U_B - U_{CE0}}{R_C + R_E}\]
 
 \[r_{BE} = \frac{U_T}{I_B} \qquad; U_T = \SI{26}{\milli\volt}\]
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=.6\textwidth]{TransistorVerstärkerschaltung}
-\end{figure}
+{\centering
+  \includegraphics[width=\textwidth]{TransistorVerstärkerschaltung_Spannungen}
+  \captionof{figure}{Spannungen an Emitterschaltung}\par%
+}
 
-\begin{minipage}{.5\linewidth}
-  {\centering
-    \includegraphics[angle=90, origin=c, width=\textwidth]{TransistorVerstärkerschaltung_Spannungen}
-    \captionof{figure}{Spannungen an Emitterschaltung}\par%
-  }
-\end{minipage}%
-\begin{minipage}{.5\linewidth}
-  {\centering
-    \includegraphics[angle=90, origin=c, width=\textwidth]{TransistorVerstärkerschaltung_OptimalAusgesteuert}
-    \captionof{figure}{Spannungen an Emitterschaltung; optimale Aussteuerung}\par%
-  }
-\end{minipage}
+\mybfcol{Für optimale Aussteuerung berühren sich \(U_C\) und \(U_E\)!}
+
+\mybfcol{Optimale Spannungsaussteuerbarkeit}\\
+Spannungen sind im Gleichgewicht
+\[U_C = U_E = \frac{1}{2} \cdot U_{\text{Bat}}\]
+\(U_{\text{Bat}}\) wird immer vollständig auf \(U_C\) und \(U_E\) aufgeteilt.
+\[U_{\text{Bat}} = U_C + U_E\]
 
 \end{document}
 
