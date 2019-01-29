@@ -1,6 +1,6 @@
 \documentclass[a5paper, 12pt, twoside]{scrartcl}
 
-\usepackage[europeanresistors]{circuitikz}
+\usepackage[europeanresistors, americaninductors]{circuitikz}
 
 
 \usepackage{scrlayer-scrpage, siunitx, mystyle}
@@ -154,7 +154,8 @@ Energie im Kondensator:\dotfill\(W = \frac{1}{2} \cdot C \cdot U^2\)
 
 \section{Filter und Übertragungsfunktionen}
 
-Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
+Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)\\
+\mybfcol{Achtung:} Wenn Übertragungsfunktion mit \(u_e^*\) gerechnet wird muss auch der Faktor vor dem ursprünglichen \(u_e\) mit einbezogen werden!
 
 {\centering
   \begin{tabular}{cllll}
@@ -304,11 +305,24 @@ Spannungen sind im Gleichgewicht
 \(U_{\text{Bat}}\) wird immer vollständig auf \(U_C\) und \(U_E\) aufgeteilt.
 \[U_{\text{Bat}} = U_C + U_E\]
 
-\mybfcol{Kollektorstrom \(I_C\) im Arbeitspunkt}\\
-(Für gegebenes \(U_{CE0}\) im Arbeitspunkt)
-\[I_{C0} = \frac{U_B - U_{CE0}}{R_C + R_E}\]
+\begin{minipage}{.49\linewidth}
+  \mybfcol{Kollektorstrom \(I_C\) im Arbeitspunkt}\\
+  (Für gegebenes \(U_{CE0}\) im Arbeitspunkt)
+  \[I_{C0} = \frac{U_B - U_{CE0}}{R_C + R_E}\]
 
-\[r_{BE} = \frac{U_T}{I_B} \qquad; U_T = \SI{26}{\milli\volt}\]
+  \[r_{BE} = \frac{U_T}{I_B} \qquad; U_T = \SI{26}{\milli\volt}\]
+\end{minipage}\hfill%
+\begin{minipage}{.49\linewidth}
+  {\centering
+    \includegraphics[origin=c, angle=90, width=\textwidth]{20190129_Screenshot4}\par
+  }
+\end{minipage}
+
+\includegraphics[width=.35\textwidth]{20190129_Screenshot1_5}
+\includegraphics[width=.6\textwidth]{20190129_Screenshot1}
+
+\includegraphics[width=.4\textwidth]{20190129_Screenshot3}
+\includegraphics[width=.35\textwidth]{20190129_Screenshot2_5}
 
 \end{document}
 
