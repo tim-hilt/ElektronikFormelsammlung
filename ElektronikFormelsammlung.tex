@@ -84,6 +84,20 @@ Beziehung zwischen zufließender bzw.\ abfließender Ladung und Spannung:
 
 Energie im Kondensator:\dotfill\(W = \frac{1}{2} \cdot C \cdot U^2\)
 
+\vfill
+
+{\centering
+  \begin{tabular}{lll}
+    \toprule
+    Frequenz & Spule & Kondensator\\
+    \midrule
+    \(\SI{0}{\hertz}\) & \(Z_L = \SI{0}{\ohm}\); Kurzschluss & \(Z_C = \infty\ \si{\ohm}\); Leerlauf\\
+    \(\infty\ \si{\hertz}\) & \(Z_L = \infty\ \si{\ohm}\); Leerlauf & \(Z_C = \SI{0}{\ohm}\); Kurzschluss\\
+    \bottomrule
+  \end{tabular}
+  \captionof{figure}{Spule und Kondensator im Frequenzbereich}\par
+}
+
 \clearpage
 
 {\centering
@@ -238,21 +252,20 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 \section{Transistor}
 
 \begin{minipage}{.49\linewidth}
-  \begin{figure}[H]
-    \centering
+  {\centering
     \includegraphics[width=\textwidth]{Transistor}
-    \caption{Ströme im Transistor}
-  \end{figure}
+    \captionof{figure}{Ströme im Transistor}\par
+  }
 \end{minipage}\hfill\vline\hfill%
 \begin{minipage}{.49\linewidth}
-  \begin{figure}[H]
-    \centering
+  {\centering
     \includegraphics[width=\textwidth]{ESBTransistor}
-    \caption{Ersatzschaltbild eines Bipolartransistors}
-  \end{figure}
+    \captionof{figure}{Ersatzschaltbild eines Bipolartransistors}\par
+  }
+  \mytextcol{Wenn keine Early-Spannung gegeben ist kann \(r_{CE}\) vernachlässigt werden!}
 \end{minipage}
 
-\mybfcol{Achtung:} Beim Zeichnen des Ersatzschaltbildes wird die Spannungsquelle kurzgeschlossen! Das heißt überall wo vorher die Versorgungsspannung war ist nun GND.\@
+\mybfcol{Achtung:} Beim Zeichnen des Ersatzschaltbildes wird die Spannungsquelle kurzgeschlossen! Das heißt überall wo vorher die Versorgungsspannung war ist nun GND.
 
 \mybfcol{Stromverstärkung}\dotfill\(\displaystyle I_C = \beta \cdot I_B\)\\[1em]
 \mybfcol{Verlustleistung}\dotfill\(\displaystyle P = U_{CE} \cdot I_C\)\\[1em]
@@ -278,12 +291,6 @@ Im Fourierbereich: \(\omega = 2 \pi f\), im Laplacebereich: \(j\omega = p\)
 
 \clearpage
 
-\mybfcol{Kollektorstrom \(I_C\) im Arbeitspunkt}\\
-(Für gegebenes \(U_{CE0}\) im Arbeitspunkt)
-\[I_{C0} = \frac{U_B - U_{CE0}}{R_C + R_E}\]
-
-\[r_{BE} = \frac{U_T}{I_B} \qquad; U_T = \SI{26}{\milli\volt}\]
-
 {\centering
   \includegraphics[width=\textwidth]{TransistorVerstärkerschaltung_Spannungen}
   \captionof{figure}{Spannungen an Emitterschaltung}\par%
@@ -296,6 +303,12 @@ Spannungen sind im Gleichgewicht
 \[U_C = U_E = \frac{1}{2} \cdot U_{\text{Bat}}\]
 \(U_{\text{Bat}}\) wird immer vollständig auf \(U_C\) und \(U_E\) aufgeteilt.
 \[U_{\text{Bat}} = U_C + U_E\]
+
+\mybfcol{Kollektorstrom \(I_C\) im Arbeitspunkt}\\
+(Für gegebenes \(U_{CE0}\) im Arbeitspunkt)
+\[I_{C0} = \frac{U_B - U_{CE0}}{R_C + R_E}\]
+
+\[r_{BE} = \frac{U_T}{I_B} \qquad; U_T = \SI{26}{\milli\volt}\]
 
 \end{document}
 
